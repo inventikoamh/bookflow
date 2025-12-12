@@ -40,14 +40,14 @@ export default function MobileBottomNav() {
 
     return (
         <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-xl border-t border-gray-200/50 z-50 safe-area-bottom shadow-2xl">
-            <div className="flex items-center justify-around h-24 px-6 py-3">
+            <div className="flex items-center justify-around h-20 px-6">
                 {navItems.map((item) => {
                     const Icon = item.icon;
                     return (
                         <Link
                             key={item.name}
                             href={item.href}
-                            className={`relative flex flex-col items-center justify-center flex-1 h-full transition-all duration-300 ${item.active ? '' : 'hover:scale-105'
+                            className={`relative flex flex-col items-center justify-center flex-1 h-full pt-3 pb-2 transition-all duration-300 ${item.active ? '' : 'hover:scale-105'
                                 }`}
                         >
                             {/* Active indicator background */}
@@ -56,16 +56,16 @@ export default function MobileBottomNav() {
                             )}
 
                             {/* Icon container */}
-                            <div className={`relative p-3.5 rounded-2xl transition-all duration-300 ${item.active
+                            <div className={`relative p-2.5 rounded-2xl transition-all duration-300 ${item.active
                                 ? `bg-gradient-to-br ${item.gradient} shadow-lg ${item.activeGlow}`
                                 : 'bg-gray-100 hover:bg-gray-200'
                                 }`}>
-                                <Icon className={`h-6 w-6 transition-colors ${item.active ? 'text-white' : 'text-gray-600'
+                                <Icon className={`h-5 w-5 transition-colors ${item.active ? 'text-white' : 'text-gray-600'
                                     }`} />
                             </div>
 
                             {/* Label */}
-                            <span className={`text-xs mt-2 transition-all font-semibold ${item.active
+                            <span className={`text-xs mt-1 transition-all font-semibold ${item.active
                                 ? `bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`
                                 : 'text-gray-600'
                                 }`}>
